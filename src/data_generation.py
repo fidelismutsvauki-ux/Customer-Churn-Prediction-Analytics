@@ -9,26 +9,26 @@ data ={
   "gender": np.random.choice(["Male","Female"],n),
   "tenure_months": np.random.randint(1,73,n),
   "monthly_charges": np.random.uniform(20,150,n).round(2),
-  "contract_type": :np.random.choice(["Month-to-month","One year","Two year"],n,
+  "contract_type": np.random.choice(["Month-to-month","One year","Two year"],n,
                                      p=[0.55,0.25,0.20]),
   "internet_service":np.random.choice(["DSL","Fibre optic","None"],n),
   "payment_method":np.random.choice(["Electronic","Credit card","Bank transfer"],n),
   "support_calls":np.random.poisson(2,n),
   "total_charges":np.zeros(n)
-
+}
 ##calculate total charges
-  df= pd.DataFrame(data)
+df= pd.DataFrame(data)
 df["total_charges"]= df["monthly_charges"]*df["tenure_months"]).round(2)
 
 ##generate customer churn probability
-churn_score = (0.15+0.12*(df["contract_type"]=="Month-to-month")+0.08*df["tenure_months"]<12)+0.08*(df["support_calls"]>3))
+churn_score = (0.15+0.12*(df["contract_type"]=="Month-to-month")+0.08*df["tenure_months"]<12)+0.08*(df["support_calls"]>3)
 churn_probability = np.clip(churn_score,0,0.9)
 
 ##generate churn outcome
 df["churn"]=np.random.binomial(1,churn_probability)
 
 ##save dataset
-df.to_csv("customer_churn.csv"),index=False)
+df.to_csv("customer_churn.csv",index=False)
 print("Dataset generated successfully")
 print("Total Customers:",len(df))
 print(df.head())
