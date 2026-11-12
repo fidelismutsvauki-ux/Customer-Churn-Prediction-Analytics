@@ -18,10 +18,10 @@ data ={
 }
 ##calculate total charges
 df= pd.DataFrame(data)
-df["total_charges"]= (df["monthly_charges"]*df["tenure_months"]).round(2)
+df["total_charges"]= df["monthly_charges"]*df["tenure_months"].round(2)
 
 ##generate customer churn probability
-churn_score = (0.15+0.12*(df["contract_type"]=="Month-to-month")+0.08*(df["tenure_months"]<12)+0.08*(df["support_calls"]>3))
+churn_score = (0.15+0.12*(df["contract_type"]=="Month-to-month")+0.08*df["tenure_months"]<12)+0.08*(df["support_calls"]>3)
 churn_probability = np.clip(churn_score,0,0.9)
 
 ##generate churn outcome
