@@ -22,4 +22,13 @@ df["total_charges"]= df["monthly_charges"]*df["tenure_months"]).round(2)
 
 ##generate customer churn probability
 churn_score = (0.15+0.12*(df["contract_type"]=="Month-to-month")+0.08*df["tenure_months"]<12)+0.08*(df["support_calls"]>3))
-churn_probability = 
+churn_probability = np.clip(churn_score,0,0.9)
+
+##generate churn outcome
+df["churn"]=np.random.binomial(1,churn_probability)
+
+##save dataset
+df.to_csv("customer_churn.csv"),index=False)
+print("Dataset generated successfully")
+print("Total Customers:",len(df))
+print(df.head())
