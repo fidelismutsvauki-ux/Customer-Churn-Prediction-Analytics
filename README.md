@@ -137,21 +137,60 @@ The observed differences are relatively small.
 
 **Interpretation:** These findings reflect the assumptions used to generate synthetic data. They should not be interpreted as proof of real-world customer behaviour or causal relationships.
 
-## 7. Project Roadmap
+## 7. Predictive Modelling
 
-- [x] Synthetic dataset generation.
-- [x] Initial data inspection.
-- [x] Missing-value analysis.
-- [x] Duplicate checking.
-- [x] Descriptive statistics.
-- [x] Overall churn-rate calculation.
-- [x] Churn analysis by categorical variables.
-- [ ] Numerical variable analysis.
-- [ ] Data visualisation.
-- [ ] Feature engineering.
-- [ ] Machine learning model development.
-- [ ] Model evaluation.
-- [ ] Business recommendations.
+After completing Exploratory Data Analysis (EDA), predictive modelling was introduced using Python's Scikit-learn library.
+
+### 7.1 Data Preparation
+
+The dataset was prepared for machine learning by:
+
+- Encoding categorical variables using `pd.get_dummies()`.
+- Splitting the dataset into training and testing sets using `train_test_split()`.
+
+The resulting dataset dimensions were:
+
+| Dataset | Shape |
+|---|---|
+| Training Features (X_train) | (4000, 12) |
+| Testing Features (X_test) | (1000, 12) |
+| Training Target (y_train) | (4000,) |
+| Testing Target (y_test) | (1000,) |
+
+### 7.2 Logistic Regression
+
+The first machine learning algorithm implemented was Logistic Regression.
+
+The initial model achieved **76.5% accuracy**. However, despite this accuracy, it failed to identify customers who actually churned.
+
+This highlighted the impact of class imbalance on model performance.
+
+### 7.3 Addressing Class Imbalance
+
+To improve the model's ability to identify customers likely to churn, Logistic Regression was retrained using:
+
+`class_weight='balanced'`
+
+This adjustment gave greater importance to the minority class (customers who churned).
+
+The balanced model achieved the following results:
+
+| Metric | Result |
+|---|---:|
+| Accuracy | 54.8% |
+| Churn Precision | 28% |
+| Churn Recall | 61% |
+| Churn F1-score | 39% |
+
+The balanced model improved churn recall from **0% to 61%**, allowing it to identify a significantly larger proportion of customers who churned.
+
+### 7.4 Confusion Matrix
+
+The balanced Logistic Regression model produced the following confusion matrix:
+
+```text
+[[405 360]
+ [ 92 143]]
 
 ## 8. Expected Business Value
 
