@@ -267,7 +267,7 @@ Visualisations were generated to communicate the model's performance and finding
 
 These included:
 
-![Confusion Matrix Heatmap](Images/random_forest_feature_Confusion_Matrix_Tuned_Random_Forest.png)
+![Confusion Matrix Heatmap](Images/random_forest_feature_Confusion_Matrix_Random_Forest.png)
 
 ![Feature importance](Images/random_forest_feature_importance.png)
 The visualisations provide a clearer understanding of the model's predictive performance and the variables influencing customer churn.
