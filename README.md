@@ -114,7 +114,7 @@ The analysis includes:
 | Two year | 18.35% |
 
 Month-to-month customers currently exhibit a higher churn rate than customers on longer-term contracts.
-![Churn by Contract Type](images/churn_contract.png)
+![Churn by Contract Type](Images/churn_contract.png)
 
 ### 6.3 Churn by Payment Method
 
