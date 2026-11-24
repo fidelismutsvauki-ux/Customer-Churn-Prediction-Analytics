@@ -190,7 +190,8 @@ The balanced Logistic Regression model produced the following confusion matrix:
 
 ```text
 [[405 360]
- [ 92 143]]```
+ [ 92 143]]
+```
 
 ## 8. Expected Business Value
 
