@@ -193,6 +193,79 @@ The balanced Logistic Regression model produced the following confusion matrix:
  [ 92 143]]
 ```
 
+### 7.5 Random Forest Classifier
+
+A Random Forest Classifier was introduced as an alternative to Logistic Regression to improve churn prediction performance.
+
+The model combines multiple decision trees to produce predictions and capture complex relationships within the dataset.
+
+### 7.6 Feature Importance Analysis
+
+Feature importance was extracted from the Random Forest model to identify the most influential predictors of customer churn.
+
+The leading features included:
+
+| Feature | Importance |
+|---|---:|
+| Total Charges | 0.2025 |
+| Monthly Charges | 0.1714 |
+| Tenure Months | 0.1598 |
+| Age | 0.1282 |
+| Contract Type (One Year) | 0.0979 |
+| Support Calls | 0.0851 |
+
+Total charges, monthly charges and customer tenure emerged as the most influential features.
+
+### 7.7 Hyperparameter Tuning
+
+GridSearchCV was used to optimise the Random Forest model by testing different combinations of hyperparameters through 5-fold cross-validation.
+
+The parameters tested included:
+
+- `n_estimators`: 100, 200, 300
+- `max_depth`: 5, 10, 20, None
+- `min_samples_split`: 2, 5, 10
+- `min_samples_leaf`: 1, 2, 4
+
+Recall was selected as the scoring metric to improve the identification of customers likely to churn.
+
+### 7.8 Model Evaluation
+
+The tuned Random Forest model was evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+The model achieved:
+
+- Accuracy: 54.7%
+- Recall: 64%
+
+### 7.9 Confusion Matrix Analysis
+
+A confusion matrix was generated to assess the classification performance of the tuned Random Forest model.
+
+The visualisation identifies:
+
+- Correctly predicted customers who stayed.
+- Correctly predicted customers who churned.
+- Customers incorrectly classified as staying.
+- Customers incorrectly classified as churning.
+
+### 7.10 Model Visualisation
+
+Visualisations were generated to communicate the model's performance and findings.
+
+These included:
+
+- Confusion Matrix Heatmap.
+- Random Forest Feature Importance Chart.
+
+The visualisations provide a clearer understanding of the model's predictive performance and the variables influencing customer churn.
+
 ## 8. Expected Business Value
 
 The completed project aims to demonstrate how data analytics and predictive modelling can help businesses:
