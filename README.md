@@ -107,6 +107,8 @@ The analysis includes:
 
 ### 6.2 Churn by Contract Type
 
+![Churn by Contract Type](Images/churn_contract.png)
+
 | Contract Type | Churn Rate |
 |---|---:|
 | Month-to-month | 27.71% |
@@ -114,9 +116,10 @@ The analysis includes:
 | Two year | 18.35% |
 
 Month-to-month customers currently exhibit a higher churn rate than customers on longer-term contracts.
-![Churn by Contract Type](Images/churn_contract.png)
+
 
 ### 6.3 Churn by Payment Method
+![Churn by Payment Method](Images/churn_payment.png)
 
 The analysis compares churn rates among customers using:
 
@@ -127,6 +130,8 @@ The analysis compares churn rates among customers using:
 The observed differences are relatively small.
 
 ### 6.4 Churn by Internet Service
+
+![Churn by Internet Service](Images/Churn_internet.png)
 
 The analysis compares churn rates among customers using:
 
@@ -262,9 +267,9 @@ Visualisations were generated to communicate the model's performance and finding
 
 These included:
 
-- Confusion Matrix Heatmap.
-- Random Forest Feature Importance Chart.
+![Confusion Matrix Heatmap](Images/random_forest_feature_Confusion_Matrix_Tuned_Random_Forest.png)
 
+![Feature importance](Images/random_forest_feature_importance.png)
 The visualisations provide a clearer understanding of the model's predictive performance and the variables influencing customer churn.
 
 ## 8. Expected Business Value
